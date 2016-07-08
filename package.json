@@ -1,0 +1,50 @@
+{
+  "name": "html5-test-dev",
+  "private": true,
+  "version": "1.0.0",
+  "description": "test project template",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
+    "grunt-bower": "^0.21.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "~2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-jshint": "~2.0.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "~1.5.3",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "jshint": "~2.9.2",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-junit-reporter": "^0.4.2",
+    "protractor": "^3.2.2",
+    "shelljs": "^0.6.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "gulp": "gulp",
+    "start": "http-server -p 8000 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://githib.com/pliesveld/template"
+  },
+  "author": "Patrick Liesveld",
+  "license": "ISC"
+}
