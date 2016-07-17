@@ -24,13 +24,15 @@ gulp.task('bootstrap-concat', function() {
   var vendor_ang = [];
 
   vendor_ang.push(bower_base + 'jquery/dist/jquery.js');
-  vendor_ang.push(bower_base + 'bootstrap/dist/js/bootstrap.js');
+  vendor_ang.push(bower_base + 'angular/angular.js');
+  vendor_ang.push(bower_base + 'angular-ui-router/release/angular-ui-router.js');
   vendor_ang.push(bower_base + 'holderjs/holder.js');
+  vendor_ang.push(bower_base + 'bootstrap/dist/js/bootstrap.js');
 
   console.log(vendor_ang);
 
   return gulp.src(vendor_ang)
-    .pipe(concat('jquery-bootstrap.js'))
+    .pipe(concat('angular-bootstrap.js'))
     .pipe(gulp.dest('app/vendor/js'));
 });
 
@@ -77,6 +79,6 @@ gulp.task('js', function() {
   .pipe(gulp.dest('app/js'));
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['js', 'watch'], function() {
     console.log(this);
 });

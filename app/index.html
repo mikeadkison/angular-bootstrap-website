@@ -8,8 +8,12 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
 
-  <body>
-    <script src="vendor/js/jquery-bootstrap.js"></script>
+  <body ng-app='App'>
+    <div class='container'>
+      <div ui-view></div>
+    </div>
+
+    <script src="vendor/js/angular-bootstrap.js"></script>
     <script src="js/frontend.js"></script>
   </body>
 </html>
