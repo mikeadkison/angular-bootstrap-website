@@ -3,22 +3,67 @@ angular.module('App', ['ui.router'])
     $logProvider.debugEnabled(true);
   })
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('');
     $stateProvider
-      .state('main',
+      .state('welcome',
         {
-          url: '/',
-          templateUrl: 'partials/main.html'
+          url: '',
+          templateUrl: 'partials/welcome.html'
         })
-      .state('main.child1',
+      .state('blog',
         {
-          url: 'child1',
-          template: '<h3>child1</h3>'
+          url: '/blog',
+          templateUrl: 'partials/blog.html'
         })
-      .state('main.child2',
+      .state('contact',
         {
-          url: 'child2',
-          template: '<h3>child2</h3>'
+          url: '/contact',
+          templateUrl: 'partials/contact_info.html'
+        })
+      .state('projects',
+        {
+          url: '/projects',
+          templateUrl: 'partials/projects.html'
+        })
+      .state('projects.fantasy_coop_game',
+        {
+          url: '/fantasy_coop_game',
+          template: '<p>An online coop RPG in the early stages of development.</p>'
+        })
+      .state('projects.mutespeak',
+        {
+          url: '/mutespeak',
+          template: '<p>A rough tool to help mute gamers communicate with their team using traditional VoIP applications.</p>'
+        })
+      .state('projects.website_info',
+        {
+          url: '/website_info',
+          template: '<p>My personal website is built from scratch using a text editor and/css.</p>'
+        })
+      .state('projects.offclass_finder',
+        {
+          url: '/offclass_finder',
+          template: '<p>An web scraping tool which automatically finds who has been breaking the rules at <a ui-sref=".http://www.tf2center.com" class="main.projects.link">TF2 Center</a>, a website for organizing competitive-format games for <a ui-sref="https://en.wikipedia.org/wiki/Team_Fortress_2" class="main-link">TF2</a> players.</p>'
+        })
+      .state('projects.ufc',
+        {
+          url: '/ufc',
+          template: '<p>I created the website for the <a class="main.projects.link" ui-sref=".http://ufc.gtorg.gatech.edu/">Unmanned Flying Club</a> at Georgia Tech.'
+        })
+      .state('projects.swf',
+        {
+          url: '/swf',
+          template: '<p>An Android application for a semester-long course</p>'
+        })
+      .state('projects.travelling_saleshot',
+        {
+          url: '/travelling_saleshot',
+          template: '<p>Programming a robot using an FPGA and assembly.</p>'
+        })
+      .state('projects.weird_nums',
+        {
+          url: '/weird_nums',
+          template: '<p>Finding pairs of numbers which satisfy an interesting property</p>'
         });
 
 

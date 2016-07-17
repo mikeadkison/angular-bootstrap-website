@@ -1,0 +1,32 @@
+<h2>Motivation</h2>
+<p>
+  A couple years ago, I tried to find an online fantasy co-op computer RPG. Turns out there aren't any, or at least very few. It may seem hard to believe this considering how many thousands of games you can find on steam, but it's true. You may cite games like <a href="http://store.steampowered.com/app/239070/" class="main-link">Hammerwatch</a> or <a href="http://store.steampowered.com/app/35720/" class="main-link">Trine</a>, and these games are indeed cooperative combat games, but they are hack and slash games with almost no story to them, and story with its associated dialogue and player decision-making is an essential part of an rpg. 
+</p>  
+<p>The game we are making will have real-time combat somewhat similar to the aforementioned games, but it will also have elements that you often find in single-player RPGs such as Skryim: NPCs who you can talk to, an actual storyline with an actual plot, and areas to explore where combat is not necessary, such as towns.</p>
+
+<h2>Challenges</h2>
+<h3>Size</h3>
+<p>
+  This project will by far have the most lines of code of any project I've done up to this point. Organizing the code will be challenging. We are addressing this problem by following popular software architectural patterns. When <a href="http://sawyerharris.com/" class="main-link">Sawyer</a> joined the project, we realized that the way the code was organized wasn't going to scale as the number of classes grew over the next couple years. Sawyer took the initiative to reorganize our existing code for both the client and server using the MVC architectural pattern. He also created UML diagrams massively help with understanding the new architecture.
+</p>
+<h3>Client Synchronization</h3>
+<p>
+  We will have to come up with/adapt a solution to a problem common to all online multiplayer games: the internet has latency, and it can drop packets or deliver them mutliple times.Having played 4200 hours of a popular source game, I have become familar with the approaches for compensating for latency described <a href="https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking" class="main-link">here</a> and find that they are effective. We will probably adapt some of those lag compensation methods to our own game's specific needs.
+</p>
+<p>
+  As for dealing with unreliable packet delivery, for now we will be using TCP for 100% of client-server communication. TCP is a popular stream-based protocol which guarantees in-order delivery of messages between the server and client. Many developers have found that TCP is awful for real-time games because guaranteed in-order message delivery results in a RTT-sized delay if a portion of the TCP stream is lost. In our tests so far, this has not been an issue, but if it does, we will switch to UDP (TCP's unreliable alternative) and write a layer on top of UDP to guarantee the delivery of important messages. By coincidence, I have already implemented such a library for a networking course.
+</p>
+<p>
+</p>
+<h2>Current Progress</h2>
+<p>
+  
+</p>
+<h2>Dedication</h2>
+<p>
+  Across the internet you can find many ambitious projects such as this one which never were completed. Their programmers get busy with other things or burned out. There are even projects which received thousands of dollars from kickstarter which were abandoned. How can this game, which never will have any budget, developed in our free time, ever reach completion where so many have failed? 
+</p>
+<p>
+  I won't be able to live with myself if I don't see this project to its finish. I want to know if I enjoy the entire process of creating a game, from initial concept to release. After this game is complete I will know if I enjoy the game-creating process enough to create more games. Short of some tragedy happening to me, I will finish this game. As for the other people working on this game, they may be here for the entire development process, or they may not. It's up to them.
+</p>
+

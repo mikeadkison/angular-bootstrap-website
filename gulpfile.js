@@ -53,7 +53,7 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'app',
     },
-    port: 8000,
+    port: 8080,
   });
 });
 
