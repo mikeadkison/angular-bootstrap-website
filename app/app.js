@@ -23,6 +23,11 @@ angular.module('App', ['ui.router'])
       .state('projects',
         {
           url: '/projects',
+          template: '<div ui-view></div>'
+        })
+      .state('projects.list',
+        {
+          url: '/list',
           templateUrl: 'partials/projects.html'
         })
       .state('projects.fantasy_coop_game',
