@@ -19,15 +19,59 @@ Motivation</h3>
 <p>
 	As for dealing with unreliable packet delivery, for now we will be using TCP for 100% of client-server communication. TCP is a popular stream-based protocol which guarantees in-order delivery of messages between the server and client. Many developers have found that TCP is awful for real-time games because guaranteed in-order message delivery results in a RTT-sized delay if a portion of the TCP stream is lost. In our tests so far, this has not been an issue, but if it does, we will switch to UDP (TCP's unreliable alternative) and write a layer on top of UDP to guarantee the delivery of important messages. By coincidence, I have already implemented such a library for a networking course.
 </p>
+<h4>Art Assets</h4>
 <p>
+Our game needs art assets. No one working on the project is an artist, and it is unrealistic to try and find an artist for a project so large and early in development. Free asset packs are not comprehensive enough, and hiring an artist is too expensive. So, I am creating the artwork. My pixel art isn't great, but I'm improving. Once the game is further along and I have more practice, I will go over the existing assets and either redo them or touch them up, but for now we are just using what we have. Another option is to bring an artist on board once we have a large portion of the game complete, since by then we will have something to show an artist to convince them that making assets for this game is worth their time. Pixel art is a skill I would like to learn, so I am happy to make the art and redo it later once I get better. Here is what some of my current efforts look like:
+</p>
+<img src="images/test.gif"> <img src="images/demo.png"> <img src="images/squirrel_big.gif"> <img src="images/cart.png"> <img src="images/sign.png"> <img src="images/tree.png">
+<p>
+I'll include more pictures of the game as it progresses, especially once we have lighting effects implemented, which will make the art fit together much better.
+</p>
+<p>
+As for music, the three of us have some musical experience, and one of us, Aethura, has shown interest in creating some music for the game. For sound effects, we will use free sound-effect creators or free sound effects available from sites such as <a href="https://www.freesound.org" target="_blank">freesound.org</a>.
 </p>
 <h3>Current Progress</h3>
 <p>
-</p>
-<h3>Dedication</h3>
-<p>
-	Across the internet you can find many ambitious projects such as this one which never were completed. Their programmers get busy with other things or burned out. There are even projects which received thousands of dollars from kickstarter which were abandoned. How can this game, which never will have any budget, developed in our free time, ever reach completion where so many have failed? 
+We are using <a href="https://libgdx.badlogicgames.com/" target="_blank">libgdx</a>, a Java game development framework, to support drawing on the screen, playing sounds, handling input, and loading maps, among other things.
 </p>
 <p>
-	I won't be able to live with myself if I don't see this project to its finish. I want to know if I enjoy the entire process of creating a game, from initial concept to release. After this game is complete I will know if I enjoy the game-creating process enough to create more games. Short of some tragedy happening to me, I will finish this game. As for the other people working on this game, they may be here for the entire development process, or they may not. It's up to them.
+Our initial goal is to complete a small portion of the game as a proof of concept. Starting from the beginning of the plot, we will implement a small intro portion of the game, probably about 15 or 20 minutes of gameplay. We refer to this initial goal as the <i>prototype</i>. We planned the prototype to use most of the systems we will need for the rest of the game. By systems I mean code for doing things like loading maps, saving maps, rendering everything on the screen, controlling NPC's, creating weather, keeping track of story progression, communicating between the clients and server, rendering the GUI, parsing spritesheet metadata, etc. So, once the prototype is finished, making the rest of the game will go faster than the prototype did.
 </p>
+<p>
+Currently, we have have code written for the following things:
+	<ul>
+		<li>Server-client communication</li>
+		<li>Creating a party of players before the game starts</li>
+		<li>Reading game maps (provided by libGDX)</li>
+		<li>Class-specific input processing</li>
+		<li>parsing spritesheet metadata (we use <a href="http://www.aseprite.org/" target="_blank">aseprite</a> to create spritesheets)</li>
+		<li>Rendering game maps (provided by libGDX)</li>
+		<li>Detecting collisions</li>
+		<li>Pathfinding (libGDX provides utility classes for this)</li>
+	</ul>
+	We are using <a href="http://www.mapeditor.org/" target="_blank">Tiled</a> to create the maps for our game. Tiled is a popular map editor, and libGDX has libraries for loading and rendering the Tiled format. We are using aseprite for creating art for the game, since it outputs a nice json metadata file with each spritesheet that describes the location of each frame among other things. We are using <a href="https://sourceforge.net/projects/dia-installer/" target="_blank">Dia Diagram Editor</a> for UML diagrams.
+</p>
+<p>
+Here's a list of things that we will be working on in the near future. This is far from a comprehensive list.
+	<ul>
+		<li>Saving maps</li>
+		<li>Creating art assets for prototype</li>
+		<li>Lighting effects. (light sources need to cast light, the time of day should affect lighting).</li>
+		<li><strong>Reorganizing the code into an architectural pattern</strong> (This is a big one, and Sawyer is spearheading this effort)</li>
+		<li>Improving lobby GUI (the screen you see when you are organizing a party to play the game with)</li>
+		<li>Investigating the feasibility of using TCP for server-client communication. (We will have to simulate various levels of packet loss)</li>
+		<li>Extend the existing rendering class to be a bit better</li>
+		<li>Creating the map that the prototype will be played on</li>
+		<li>Implementing dialogue system</li>
+		<li>Implement system to keep track of plot progress</li>
+		<li>Implement NPC AI for various enemies and other non-enemy NPCs</li>
+		<li>Implement system to represent spells</li>
+		<li>Implement system to display cutscenes</li>
+		<li>A name for the game</li>
+		<li>So much more</li>
+	</ul>
+</p>
+<h3>Links</h3>
+<p>
+You can find the game's new repository on github. It will look empty for a while until we move the code from our old repository to the new one.</p>
+<p><a class="btn btn-sm btn-info" target="_blank" href="https://github.com/asiudhgfiuashgiuashg/fantasy-coop-game">github</a> </p> <p><a class="btn btn-sm btn-info" target="_blank" href="https://libgdx.badlogicgames.com/">libGDX</a><a class="btn btn-sm btn-info" target="_blank" href="http://www.mapeditor.org/">Tiled</a></p>

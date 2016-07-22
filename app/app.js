@@ -28,12 +28,12 @@ angular.module('App', ['ui.router'])
       .state('projects.list',
         {
           url: '/list',
-          templateUrl: 'partials/projects.html'
+          templateUrl: 'partials/projects/projects.html'
         })
       .state('projects.fantasy_coop_game',
         {
           url: '/fantasy_coop_game',
-          template: '<p>An online coop RPG in the early stages of development.</p>'
+          templateUrl: 'partials/projects/fantasy_coop_game.html'
         })
       .state('projects.mutespeak',
         {
@@ -69,7 +69,12 @@ angular.module('App', ['ui.router'])
         {
           url: '/weird_nums',
           template: '<p>Finding pairs of numbers which satisfy an interesting property</p>'
-        });
+        })
+			.state('hobbies',
+			  {
+				  url: '/hobbies',
+					templateUrl: 'partials/hobbies.html'
+				});
 
 
   })
