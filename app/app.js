@@ -53,7 +53,7 @@ angular.module('App', ['ui.router'])
       .state('projects.ufc',
         {
           url: '/ufc',
-          template: '<p>I created the website for the <a class="main.projects.link" ui-sref=".http://ufc.gtorg.gatech.edu/">Unmanned Flying Club</a> at Georgia Tech.'
+          templateUrl: 'partials/projects/ufc.html'
         })
       .state('projects.swf',
         {
