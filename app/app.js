@@ -74,6 +74,16 @@ angular.module('App', ['ui.router'])
         {
 	  url: '/hobbies',
           templateUrl: 'partials/hobbies.html'
+	})
+	.state('projects.automute',
+	{
+	  url: '/automute',
+	  templateUrl: 'partials/projects/automute.html'
+	})
+	.state('resume',
+	{
+	  url: '/resume',
+	  templateUrl: 'partials/resume.html'
 	});
 
 
