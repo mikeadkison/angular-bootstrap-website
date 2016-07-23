@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Mike Adkison</title>  
-	
-
+		<title>Mike Adkison</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="vendor/css/bootstrap.css" rel="stylesheet">
 		<link href="vendor/css/bootstrap-theme.css" rel="stylesheet">
@@ -11,10 +9,9 @@
 	</head>
 	<body ng-app='App'>
 		<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-lg-2">
-				<nav class="navbar navbar-default navbar-fixed-side">
-					<div class="navbar-header">
+			<div class="row">
+				<div class="col-sm-3 col-lg-2">
+					<nav class="navbar navbar-default navbar-fixed-side">
 						<div class="navbar-header">
 							<button tabindex="-1" type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
 							<span class="sr-only">Toggle navigation</span>
@@ -27,40 +24,41 @@
 						<div id="navbarCollapse" class="collapse navbar-collapse">
 							<!-- normal collapsible navbar markup -->
 							<ul class="nav navbar-nav">
-
 								<li ui-sref-active="active">
 									<a ui-sref='contact'>
-									<span class="hidden-xs glyphicon glyphicon-inbox"> Contact</a>
+									<span class="glyphicon glyphicon-inbox"></span>&nbsp&nbspContact</a>
 								</li>
 								<li ui-sref-active="active">
 									<a ui-sref='projects.list'>
-									<span class="hidden-xs glyphicon glyphicon-th"> Projects
+									<span class="glyphicon glyphicon-th"></span>&nbsp&nbspProjects 
 									</a>
 								</li>
 								<li ui-sref-active="active">
 									<a ui-sref='hobbies'>
-									<span class="hidden-xs glyphicon glyphicon-th"> Hobbies
+									<span class="glyphicon glyphicon-th"></span>&nbsp&nbspHobbies 
 									</a>
 								</li>
 								<li ui-sref-active="active">
 									<a ui-sref='blog'>
-									<span class="hidden-xs glyphicon glyphicon-pencil"> Blog
+									<span class="glyphicon glyphicon-pencil"></span>&nbsp&nbspBlog 
 									</a>
 								</li>
 								<li ui-sref-active="active">
 									<a ui-sref='resume'>
-									<span class="hidden-xs glyphicon glyphicon-user"> Resume
+									<span class="glyphicon glyphicon-user"></span>&nbsp&nbspResume 
 									</a>
 								</li>
 							</ul>
 						</div>
-				</nav>
+					</nav>
 				</div>
 				<div class="col-sm-9 col-lg-10">
 					<div ui-view></div>
 				</div>
 			</div>
 		</div>
+
+
 		<script src="vendor/js/angular-bootstrap.js"></script>
 		<script src="js/frontend.js"></script>
 	</body>
