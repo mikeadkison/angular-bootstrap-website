@@ -48,7 +48,7 @@ angular.module('App', ['ui.router'])
       .state('projects.offclass_finder',
         {
           url: '/offclass_finder',
-          template: '<p>An web scraping tool which automatically finds who has been breaking the rules at <a ui-sref=".http://www.tf2center.com" class="main.projects.link">TF2 Center</a>, a website for organizing competitive-format games for <a ui-sref="https://en.wikipedia.org/wiki/Team_Fortress_2" class="main-link">TF2</a> players.</p>'
+          templateUrl: 'partials/projects/offclass_finder.html'
         })
       .state('projects.ufc',
         {
