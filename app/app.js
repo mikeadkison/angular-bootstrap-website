@@ -43,7 +43,7 @@ angular.module('App', ['ui.router'])
       .state('projects.website_info',
         {
           url: '/website_info',
-          template: '<p>My personal website is built from scratch using a text editor and/css.</p>'
+          templateUrl: 'partials/projects/website_info.html'
         })
       .state('projects.offclass_finder',
         {
