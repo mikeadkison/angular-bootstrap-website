@@ -38,7 +38,7 @@ angular.module('App', ['ui.router'])
       .state('projects.mutespeak',
         {
           url: '/mutespeak',
-          template: '<p>A rough tool to help mute gamers communicate with their team using traditional VoIP applications.</p>'
+          templateUrl: 'partials/projects/mutespeak.html'
         })
       .state('projects.website_info',
         {

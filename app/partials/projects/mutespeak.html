@@ -1,0 +1,32 @@
+<h2>Mutespeak</h2>
+<p>I play a game called <a href="https://en.wikipedia.org/wiki/Team_Fortress_2#Competitive Play" target="_blank">Team Fortress 2</a> competitively. In competitive play, players will forms teams and compete for one season (several months) against other teams. Because fast coordination and information-sharing is important, teams use VoIP programs such as <a href="https://wiki.mumble.info/wiki/Main_Page" target="_blank">Mumble</a> to communicate with their voices during gameplay.</p>
+
+<p>
+<a href="https://github.com/mikeadkison/mutespeak" target="_blank">Mutespeak</a> helps people without the ability to speak (no microphone, speech disability) to communicate quickly in VoIP programs. It allows the user to pair global key shortcuts of his choice to voice sayings which are generated on the fly with text-to-speech.
+</p>
+
+<h3>Usage</h3>
+<ol>
+	<li>Install 64 bit Java</li>
+	<li>Download the <a href="https://github.com/mikeadkison/mutespeak/releases" target="_blank">mutespeak release</a>
+	<li>Unzip tts.zip</li>
+	<li>Run the .jar file</li>
+	<li>Enter your key binds and their associated speech sayings</li>
+	<li>Use <a href="https://en.wikipedia.org/wiki/PulseAudio" target="_blank">PulseAudio</a> or <a href="https://sourceforge.net/projects/qjackctl/" target="_blank">QjackCtl</a> or <a href="http://www.howtogeek.com/howto/39532/how-to-enable-stereo-mix-in-windows-7-to-record-audio/" target="_blank">Windows Stereo Mix</a> to route the output of the program to a virtual microphone.
+	<li>In your VoIP program, select the virtual mic as your input</li>
+	<li>Start up your game</li>
+	<li>Press the key binds corresponding to what you would like the voice to say. You may also need to press your VoIP program's <a href="https://en.wikipedia.org/wiki/Push-to-talk" target="_blank">Push-to-talk</a> key at the same time.
+</ol>
+
+<h3>Limitations</h3>
+<p>
+The program works on Windows only. The reason for this is that it is hard to find good (understandable) cross-platform text-to-speech libraries, and also hard to find good cross-platform global key bind libraries, because global key binds are operating system-specific in their implementation. Since most people game on Windows, and the person I originally made this for uses Windows, I wrote this program for Windows.
+</p>
+
+<h3>Info</h3>
+<p>
+Mutespeak uses Windows's built-in TTS by generating a VBS script on the fly which is able to use the Microsoft Speech API. This was the easiest way to get TTS on Windows. The alternatives would require including additional .jars, and many alternatives sound bad or cost money.
+</p>
+<p>
+A python version of mutespeak made by someone else which makes use of <a href="http://espeak.sourceforge.net/" target="_blank">espeak</a> is available in an unfinished state <a href="https://github.com/pliesveld/mutespeak.py" target="_blank">here</a>. Since espeak is available on linux, this version might make a good linux-compatible mutespeak if someone takes the time to finish it. Warning: espeak sounds awful.
+</p>
