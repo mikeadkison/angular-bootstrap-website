@@ -58,23 +58,23 @@ angular.module('App', ['ui.router'])
       .state('projects.swf',
         {
           url: '/swf',
-          template: '<p>An Android application for a semester-long course</p>'
+          templateUrl: 'partials/projects/swf.html'
         })
-      .state('projects.travelling_saleshot',
+      .state('projects.travelling_salesbot',
         {
-          url: '/travelling_saleshot',
-          template: '<p>Programming a robot using an FPGA and assembly.</p>'
+          url: '/travelling_salesbot',
+          templateUrl: 'partials/projects/travelling_salesbot.html'
         })
       .state('projects.weird_nums',
         {
           url: '/weird_nums',
-          template: '<p>Finding pairs of numbers which satisfy an interesting property</p>'
+          templateUrl: 'partials/projects/weird_nums.html' 
         })
-			.state('hobbies',
-			  {
-				  url: '/hobbies',
-					templateUrl: 'partials/hobbies.html'
-				});
+	.state('hobbies',
+        {
+	  url: '/hobbies',
+          templateUrl: 'partials/hobbies.html'
+	});
 
 
   })
