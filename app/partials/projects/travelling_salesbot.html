@@ -1,0 +1,22 @@
+<h2>Travelling Salesbot</h2>
+<p>
+For my <a href="http://powersof2.gatech.edu/2031/ece2031.html" target="_blank">digital design</a> lab, we worked in teams to program a robot to move to a series of points as fast as possible. This is a simple task given a more advanced robot programmable in a high-level language, but this robot had to be programmed with assembly. Its processor was simple a <a target="_blank" href="https://en.wikipedia.org/wiki/Soft_microprocessor">soft microprocessor</a> running on an FPGA (we also specified portions of this processor earlier in the course with VHDL).
+</p>
+<figure class="figure">
+	<img src="images/travelling_salesbot/de2bot.jpg" class="figure-img img-fluid">
+	<figcaption class="figure-caption">The robot.</figcaption>
+</figure>
+<br>
+<p>
+Since the goal was to move to the points as fast as possible and the robot's processor was slow and hard to program (programs had to be written in assembly), we chose to write a Java program to run on a desktop computer to find a path between the given points and then place the points in the order that they were to be visited in a contiguous block of memory on the robot. This means that all the robot had to do was move to the points in the order that it was given them instead of having to do pathfinding itself. 
+</p>
+<p>
+I wrote the assembly that ran on the robot to allow it to navigate to the given points in order. Because of inaccuracies with the robot's motors and irregularities on the ground, the robot needed to make small adjustments when moving between points so that it didn't move off-course. Taking inspiration from <a href="https://en.wikipedia.org/wiki/Braitenberg_vehicle" target="_blank">Braitenberg vehicles</a>, I treated the position of the destination point as a "light emitter", and the bot's built-in angular heading error as a sensor which directly affected the motors to cause the robot to constantly adjust itself to point towards the target, as illustrated by vehicle 2b in the following figure (taken from the wikipedia page). I also programmed the robot to be capable of backing up towards the next point instead of moving forward, if that option is faster.
+<figure class="figure">
+	<img src="images/travelling_salesbot/vehicle_diagram.png" class="figure-img img-fluid">
+</figure>
+
+</p>
+<p>
+<a target="_blank" href="https://github.com/srijansood/BruteSquad2031" class="btn btn-sm btn-info">github</a>
+</p>
