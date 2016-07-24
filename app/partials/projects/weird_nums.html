@@ -1,0 +1,14 @@
+<h2>Weird Numbers</h2>
+<p>My high school math teacher taught us a cool "trick" to quickly divide 64 by 16 (<sup>64</sup>&frasl;<sub>16</sub>). You simply cancel the 6's to get 4/1 = 4. In case you don't quite remember your elementary math, this is not actually a legal operation. This trick happens to work for 64 and 16. It does not work for most dividend/divisor pairs. For example, if you were dividing 14 by 21 and cancelled the 1's you'd get a very wrong answer. 
+</p>
+<p>
+One night/morning in college, I came up with a programmatic way of enumerating pairs of numbers such as 64 and 16 which you can cancel digits from to get a valid answer (4/1 in the case of 64/16).
+For a given dividend-divisor pair, find all permutations, nPr, of the digits of each of each number in the pair, with n being the number of digits in the number and r ranging from 1 to n - 1 inclusive.
+</p>
+<p>
+For every matching permutation, where the dividend and divisor share a permutation of digits, remove the permutation's digits from both the dividend and divisor to create dividend' and divisor'. If dividend / divisor == dividend' / divisor', then the dividend-divisor pair satisfies the property described in the first paragraph. If for every matching permutation dividend / divisor != dividend' / divisor', or if there are no matching permutations, then the pair of numbers doesn't satisfy the property.
+</p>
+
+<p>
+You can generate these numbers yourself by running the python script <a target="_blank" href="https://github.com/mikeadkison/findingWeirdNums/blob/master/findWeirdNumbers.py">here</a>. Warning: this is terribly-written, barely-commented, hacky one-off script. For some reason I didn't even make use of itertool's <a target="_blank" href="https://docs.python.org/2/library/itertools.html#itertools.permutations">permutations function</a>.
+</p>
