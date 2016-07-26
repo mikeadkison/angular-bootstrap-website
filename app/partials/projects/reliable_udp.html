@@ -1,0 +1,60 @@
+<div class="row">
+<div class="col-xs-12">
+	<h2>Reliable UDP</h2>
+	<p>For my <a target="_blank" href="http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/Courses/cs3251-spring16.html">networking course</a> final project we had to write an application layer on top of UDP to provide reliable, in-order, connection-oriented, stream-based delivery (the same guarantees that TCP makes).</p>
+	
+	<p>This is the structure I decided on for my reliable protocol's packet header:</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Checksum</th>
+				<th>Window Size</th>
+				<th>Useful Packet Size</th>
+				<th>Flag Number</th>
+				<th>Sequence Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>16 bytes</td>
+				<td>4 bytes</td>
+				<td>2 bytes</td>
+				<td>1 byte</td>
+				<td>4 bytes</td>
+			</tr>
+		</tbody>
+	</table>
+	<dl class="dl-horizontal clearfix">
+		<dt class="col-sm-3">Checksum</dt>
+		<dd class="col-sm-9">The 16 byte MD5 checksum which is calculated from the remainder of the header + the data bytes</dd>
+		<dt class="col-sm-3">Window Size</dt>
+		<dd class="col-sm-9">The size of the receiving window of the packet’s source.</dd>
+		<dt class="col-sm-3">Useful packet size</dt>
+		<dd class="col-sm-9">Packets are a fixed size of 512 bytes. The useful packet size specifies how much of the packet is actually occupied by data and the header. The receiver can avoid reading garbage this way</dd>
+		<dt class="col-sm-3">Flag number</dt>
+		<dd class="col-sm-9">The flag number specifies the purpose of the packet. The flag numbers and their meanings are paired below.</dd>
+		<dt class="col-sm-3">Sequence number</dt>
+		<dd class="col-sm-9">The sequence number of the packet. Sequence numbers are unique to each packet and are assigned sequentially starting at zero. Ack packets have the same sequence number as the packet they are acknowledging.</dd>
+	</dl>
+	<table class="table">
+		<caption>Flag Number Meanings</caption>
+		<tr><th scope="row">0</th>
+		<td>Data</td></tr>
+		<tr><th scope="row">1</th>
+		<td>Ack</td></tr>
+		<tr><th scope="row">2</th>
+		<td>ConnectionInit (first part of 3-way handshake)</td></tr>
+		<tr><th scope="row">3</th>
+		<td>ConnectionInitConfirm (second part of 3-way handshake)</td></tr>
+		<tr><th scope="row">4</th>
+		<td>ConnectionInitConfirmAck (third part of 3-way handshake)</td></tr>
+		<tr><th scope="row">5</th>
+		<td>Close (the connection)</td></tr>
+		<tr><th scope="row">6</th>
+		<td>CloseAck</td></tr>
+	</table>
+	<p>
+	You can see the code here: <a target="_blank" href="https://github.com/mikeadkison/cs3251-final-project" class="btn btn-sm btn-info">github</a>. It includes example client and server applications which take advantage of the reliable UDP API that I wrote, which I call RTP, reliable transport protocol.
+	</p>
+</div>
+</div>

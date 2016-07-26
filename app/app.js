@@ -84,6 +84,11 @@ angular.module('App', ['ui.router'])
 	{
 	  url: '/resume',
 	  templateUrl: 'partials/resume.html'
+	})
+	.state('projects.reliable_udp',
+	{
+	  url: '/reliable_udp',
+	  templateUrl: 'partials/projects/reliable_udp.html'
 	});
 
 
