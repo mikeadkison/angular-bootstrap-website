@@ -89,6 +89,11 @@ angular.module('App', ['ui.router'])
 	{
 	  url: '/reliable_udp',
 	  templateUrl: 'partials/projects/reliable_udp.html'
+	})
+	.state('projects.tipline',
+	{
+	  url: '/tipline.html',
+	  templateUrl: 'partials/projects/tipline.html'
 	});
 
 
